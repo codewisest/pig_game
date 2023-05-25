@@ -50,6 +50,25 @@ function updateCurrentScore() {
   scoreUpdate += randomNumber;
   activePlayerCurrentScoreDOM.textContent = scoreUpdate;
   console.log(scoreUpdate);
+  return scoreUpdate;
+}
+
+function updateTotalScore() {
+  const activePlayer = document.querySelector('.player--active');
+
+  let activePlayerTotalScoreDOM = activePlayer.querySelector('.score');
+  let activePlayerTotalScore = Number(activePlayerTotalScoreDOM.textContent);
+  activePlayerTotalScore = activePlayerTotalScore + scoreUpdate;
+  console.log(activePlayerTotalScore);
+  activePlayerTotalScoreDOM.textContent = activePlayerTotalScore;
+}
+
+function clearCurrent() {
+  scoreUpdate = 0;
+  const activePlayer = document.querySelector('.player--active');
+  const activePlayerCurrentScoreDOM =
+    activePlayer.querySelector('.current-score');
+  activePlayerCurrentScoreDOM.textContent = scoreUpdate;
 }
 
 // event handlers
@@ -66,5 +85,7 @@ rollDice.addEventListener('click', function () {
 
 // on hold
 hold.addEventListener('click', function () {
+  updateTotalScore();
+  clearCurrent();
   toggleActivePlayer();
 });
