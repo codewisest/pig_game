@@ -4,7 +4,6 @@ const rollDice = document.querySelector('.btn--roll');
 const hold = document.querySelector('.btn--hold');
 const players = document.querySelectorAll('.player');
 const playersScore = document.querySelectorAll('[class*="score"');
-const activePlayer = document.querySelector('.player--active');
 const dice = document.querySelector('.dice');
 
 // initialise game
@@ -42,6 +41,8 @@ function toggleActivePlayer() {
 let scoreUpdate = 0;
 
 function updateCurrentScore() {
+  const activePlayer = document.querySelector('.player--active');
+
   const activePlayerCurrentScoreDOM =
     activePlayer.querySelector('.current-score');
   //   let currentScoreDOM = activePlayerCurrentScoreDOM.textContent;
@@ -64,3 +65,6 @@ rollDice.addEventListener('click', function () {
 });
 
 // on hold
+hold.addEventListener('click', function () {
+  toggleActivePlayer();
+});
