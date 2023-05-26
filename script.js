@@ -75,12 +75,18 @@ function clearCurrent() {
 // on dice roll
 rollDice.addEventListener('click', function () {
   // generate random number 1 to 6
-  randomResult();
+  const randomNumber = randomResult();
   // display corresponding dice image
   setDiceImage();
 
-  // add to current player score
-  updateCurrentScore();
+  // check if dice rolled is 1
+  if (randomNumber !== 1) {
+    // add to current player score
+    updateCurrentScore();
+  } else {
+    clearCurrent();
+    toggleActivePlayer();
+  }
 });
 
 // on hold
