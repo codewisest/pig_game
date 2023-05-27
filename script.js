@@ -5,6 +5,7 @@ const hold = document.querySelector('.btn--hold');
 const players = document.querySelectorAll('.player');
 const playersScore = document.querySelectorAll('[class*="score"');
 const dice = document.querySelector('.dice');
+const newGame = document.querySelector('.btn--new');
 
 // initialise game
 function initialiseGame() {
@@ -109,4 +110,8 @@ hold.addEventListener('click', function () {
   winnerCheck();
 
   toggleActivePlayer();
+});
+
+newGame.addEventListener('click', () => {
+  initialiseGame();
 });
