@@ -20,7 +20,7 @@ let randomNumber;
 // generate random number 1 to 6
 const randomResult = function () {
   randomNumber = Math.trunc(Math.random() * 6) + 1;
-  console.log(randomNumber);
+  // console.log(randomNumber);
   return randomNumber;
 };
 
@@ -49,7 +49,7 @@ function updateCurrentScore() {
   //   let currentScore = Number(currentScoreDOM);
   scoreUpdate += randomNumber;
   activePlayerCurrentScoreDOM.textContent = scoreUpdate;
-  console.log(scoreUpdate);
+  // console.log(scoreUpdate);
   return scoreUpdate;
 }
 
@@ -59,8 +59,21 @@ function updateTotalScore() {
   let activePlayerTotalScoreDOM = activePlayer.querySelector('.score');
   let activePlayerTotalScore = Number(activePlayerTotalScoreDOM.textContent);
   activePlayerTotalScore = activePlayerTotalScore + scoreUpdate;
-  console.log(activePlayerTotalScore);
+  // console.log(activePlayerTotalScore);
   activePlayerTotalScoreDOM.textContent = activePlayerTotalScore;
+  return activePlayerTotalScore;
+}
+
+// check for winner
+function winnerCheck() {
+  const activePlayerTotalScore = updateTotalScore();
+  console.log(activePlayerTotalScore);
+  if (activePlayerTotalScore >= 30) {
+    const activePlayer = document.querySelector('.player--active');
+    const name = activePlayer.querySelector('.name').textContent;
+    alert(`${name} + won!!!`);
+    initialiseGame();
+  }
 }
 
 function clearCurrent() {
@@ -93,5 +106,7 @@ rollDice.addEventListener('click', function () {
 hold.addEventListener('click', function () {
   updateTotalScore();
   clearCurrent();
+  winnerCheck();
+
   toggleActivePlayer();
 });
