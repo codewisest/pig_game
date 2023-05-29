@@ -108,7 +108,6 @@ hold.addEventListener('click', function () {
   updateTotalScore();
   clearCurrent();
   winnerCheck();
-
   toggleActivePlayer();
 });
 
