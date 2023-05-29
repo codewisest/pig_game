@@ -20,4 +20,5 @@ I could make the game more fun in the future by implementing additional features
 If they overshoot the winning score, the current score would be deducted from the total score instead of adding it.
 
 ### Installation
-You can play the game simply by clicking on https://codewisest.github.io/pig_game/
+No special installation required. You can play the game simply by clicking on https://codewisest.github.io/pig_game/ .
+Kindly not that responsive design is not implemented. Hence, for best view experience, you would have to play it on a desktop screen size.
