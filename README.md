@@ -18,3 +18,6 @@ I could make the game more fun in the future by implementing additional features
 + Giving user ability to choose if they would like to play with a die or two dice
 + Adding different modes. For instance a mode can have a slightly different rule that says the winner should get the exact number as the winning score. 
 If they overshoot the winning score, the current score would be deducted from the total score instead of adding it.
+
+### Installation
+You can play the game simply by clicking on https://codewisest.github.io/pig_game/
